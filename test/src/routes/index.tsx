@@ -10,7 +10,7 @@ export default function Home() {
         </Drawer.Trigger>
         <Drawer.Portal>
           <Drawer.Overlay backgroundColor="" />
-          <Drawer.Content class="max-h-[500px] bg-purple-500" hiddenFooter={false}>
+          <Drawer.Content class="max-h-[600px] bg-purple-500" hiddenFooter={false}>
             <div class="h-1 w-10 self-center rounded-full bg-stone-50" />
             <Drawer.Label class="mt-2 text-center text-xl font-bold">
               I'm a drawer!

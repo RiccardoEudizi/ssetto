@@ -11,7 +11,6 @@ import {
   type VoidComponent,
 } from "solid-js";
 
-
 type OverlayProps = { backgroundColor: string };
 function Overlay(props: OverlayProps) {
   const context = Dr.useContext();
@@ -25,19 +24,20 @@ function Overlay(props: OverlayProps) {
     />
   );
 }
-type ContentProps = { children: JSXElement; hiddenFooter: boolean, class?:string };
+type ContentProps = {
+  children: JSXElement;
+  hiddenFooter: boolean;
+  class?: string;
+};
 function Content(props: ContentProps) {
   return (
     <Dr.Content class={"peer content " + props.class!}>
       {props.children}
-     
     </Dr.Content>
   );
 }
 const DrawerExample = () => {
   const context = Dr.useContext();
-
-  
 
   return (
     <>
@@ -85,11 +85,10 @@ function Root(props: RootProps) {
 
 function HomeDrawer(props: RootProps) {
   const context = Dr.useContext();
-  const scaleValue = () => 1 - ((context?.openPercentage() ?? 0) / 60);
+  const scaleValue = () => 1 - (context?.openPercentage() ?? 0) / 22;
   const borderRadiusValue = () => (context?.openPercentage() ?? 0) * 10;
 
-  const translateYValue = () =>
-    Math.max(0, (context?.openPercentage() ?? 0) * 14);
+  const translateYValue = () => context?.openPercentage() ?? 0;
 
   createEffect(() => {
     if (props.scaleBackground) {
@@ -109,14 +108,10 @@ function HomeDrawer(props: RootProps) {
         `${translateYValue()}px`
       );
       if (context?.openPercentage() > 0) {
-        props.bgSelector.style.overflow="hidden"
-        
+        props.bgSelector.style.overflow = "hidden";
+      } else {
+        props.bgSelector.style.overflow = "auto";
       }
-      else{
-        props.bgSelector.style.overflow="auto"
-        
-      }
-      
     }
   });
 
