@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-drawer-wrapper][data-drawer-open="true"] {
+  border-radius: var(--radius-amount);
+  transform: scale(var(--scale-amount))
+    translate3d(0, var(--translate-y-amount), 0);
+  transition: transform;
+  transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  transition-duration: 500ms;
+}
+[data-drawer-wrapper][data-drawer-open="false"] {
+  border-radius: var(--radius-amount);
+  transform: scale(var(--scale-amount))
+    translate3d(0, var(--translate-y-amount), 0);
+  transition: transform;
+  transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  transition-duration: 500ms;
+}
+
+[data-corvu-dialog-content][data-transitioning] {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  transition-duration: 500ms;
+}
