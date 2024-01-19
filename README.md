@@ -21,7 +21,7 @@ function MyComponent() {
         </Drawer.Trigger>
         <Drawer.Portal>
           <Drawer.Overlay  />
-          <Drawer.Content class="max-h-[90vh] bg-stone-50 border-none" hiddenFooter={false}>
+          <Drawer.Content class="max-h-[90vh] bg-stone-50 border-none" >
             <div class="h-1 w-10 self-center rounded-full bg-stone-300" />
             <Drawer.Label class="mt-2 text-center text-xl font-bold">
               I'm a drawer!
