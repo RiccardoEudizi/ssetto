@@ -4,13 +4,13 @@ export default function Home() {
   
   return (
     <main class="text-center mx-auto text-gray-700 p-4">
-      <Drawer.Root scaleBackground={true} bgSelector={document.querySelector('#app') as HTMLElement}>
+      <Drawer.Root  bgSelector={document.querySelector('#app') as HTMLElement}>
         <Drawer.Trigger class="rounded-lg bg-stone-100 px-4 py-3 text-lg font-medium text-stone-600 transition-all duration-100 hover:bg-stone-200 active:translate-y-0.5">
           Open Drawer
         </Drawer.Trigger>
         <Drawer.Portal>
           <Drawer.Overlay  />
-          <Drawer.Content class="max-h-[600px] bg-stone-50" hiddenFooter={false}>
+          <Drawer.Content class="max-h-[90vh] bg-stone-50 border-none" hiddenFooter={false}>
             <div class="h-1 w-10 self-center rounded-full bg-stone-300" />
             <Drawer.Label class="mt-2 text-center text-xl font-bold">
               I'm a drawer!

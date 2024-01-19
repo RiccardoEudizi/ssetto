@@ -16,7 +16,8 @@ function Overlay() {
   
       class="overlay"
       style={{
-        "background-color": `rgb(0 0 0 / ${0.5 * context?.openPercentage()})`,
+        "background-color": `rgb(0 0 0 / 1)`,
+        "opacity":`${0.5 * context?.openPercentage()}`,
       }}
     />
   );
@@ -37,7 +38,7 @@ function Content(props: ContentProps) {
 
 type RootProps = {
   children: JSXElement;
-  scaleBackground: boolean;
+ 
   bgSelector: HTMLElement;
 };
 function Root(props: RootProps) {
@@ -51,12 +52,12 @@ function Root(props: RootProps) {
 function HomeDrawer(props: RootProps) {
   const context = Dr.useContext();
   const scaleValue = () => 1 - (context?.openPercentage() ?? 0) / 22;
-  const borderRadiusValue = () => (context?.openPercentage() ?? 0) * 10;
+  const borderRadiusValue = () => (context?.openPercentage() ?? 0) * 14;
 
   const translateYValue = () => context?.openPercentage() ?? 0;
 
   createEffect(() => {
-    if (props.scaleBackground) {
+   
       props.bgSelector.dataset.drawerWrapper = "";
       props.bgSelector.dataset.drawerOpen = String(
         context?.openPercentage() > 0
@@ -77,7 +78,7 @@ function HomeDrawer(props: RootProps) {
       } else {
         props.bgSelector.style.overflow = "auto";
       }
-    }
+    
   });
 
   return props.children;

@@ -27,7 +27,7 @@
   z-index: 40;
 }
 .peer[data-transitioning]~[data-corvu-dialog-overlay] {
-  transition-property: background-color;
+  transition-property: background-color, opacity;
   transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
   transition-duration: 500ms;
 }
@@ -46,7 +46,7 @@
   flex-direction: column;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
-  border-top-width: 4px;
+  
   padding-top: 0.75rem;
 }
 [data-corvu-dialog-content]::after {
