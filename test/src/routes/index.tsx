@@ -1,4 +1,4 @@
-import Drawer from "../../../src";
+import Drawer from "ssetto";
 
 export default function Home() {
   
@@ -10,8 +10,8 @@ export default function Home() {
         </Drawer.Trigger>
         <Drawer.Portal>
           <Drawer.Overlay backgroundColor="" />
-          <Drawer.Content class="max-h-[600px] bg-purple-500" hiddenFooter={false}>
-            <div class="h-1 w-10 self-center rounded-full bg-stone-50" />
+          <Drawer.Content class="max-h-[600px] bg-stone-50" hiddenFooter={false}>
+            <div class="h-1 w-10 self-center rounded-full bg-stone-300" />
             <Drawer.Label class="mt-2 text-center text-xl font-bold">
               I'm a drawer!
             </Drawer.Label>
