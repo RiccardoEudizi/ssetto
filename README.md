@@ -1,4 +1,4 @@
-Ssetto is an unstyled drawer component with a sheet animation for Solid. It is based on top of [corvu](https://github.com/corvudev/corvu) 
+[Ssetto]() is an unstyled drawer component with a sheet animation for Solid. It is based on top of [corvu](https://github.com/corvudev/corvu) 
 
 ## Usage
 
@@ -40,6 +40,11 @@ function MyComponent() {
 ```
 
 ## API Reference
+
+The Root, Overlay and the Content components are wrappers around Corvu's ones.
+
+The rest of components are exported from Corvu's ones
+
 [Docs](https://corvu.dev/docs/primitives/drawer).
 ### Root
 

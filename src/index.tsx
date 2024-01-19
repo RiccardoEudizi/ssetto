@@ -1,19 +1,20 @@
 import "./styles.css";
 
 
-import Dr from "corvu/drawer";
+import Dr, { OverlayProps } from "corvu/drawer";
 import {
   createEffect,
+  JSX,
   JSXElement,
 } from "solid-js";
 
-type OverlayProps = { backgroundColor: string };
-function Overlay() {
+
+function Overlay(props:OverlayProps) {
   const context = Dr.useContext();
 
   return (
     <Dr.Overlay
-  
+    {...props}
       class="overlay"
       style={{
         "background-color": `rgb(0 0 0 / 1)`,
@@ -22,34 +23,34 @@ function Overlay() {
     />
   );
 }
-type ContentProps = {
+type ContentWProps = {
   children: JSXElement;
-  hiddenFooter: boolean;
+ 
   class?: string;
-};
-function Content(props: ContentProps) {
+} ;
+function Content(props: ContentWProps ) {
   return (
-    <Dr.Content class={"peer content " + props.class!}>
+    <Dr.Content {...props} class={"peer content " + props.class!}>
       {props.children}
     </Dr.Content>
   );
 }
 
 
-type RootProps = {
+type RootWProps = {
   children: JSXElement;
  
   bgSelector: HTMLElement;
-};
-function Root(props: RootProps) {
+} ;
+function Root(props: RootWProps ) {
   return (
-    <Dr.Root breakPoints={[0.75]} >
+    <Dr.Root {...props} breakPoints={[0.75]} >
       <HomeDrawer {...props}>{props.children}</HomeDrawer>
     </Dr.Root>
   );
 }
 
-function HomeDrawer(props: RootProps) {
+function HomeDrawer(props: RootWProps) {
   const context = Dr.useContext();
   const scaleValue = () => 1 - (context?.openPercentage() ?? 0) / 22;
   const borderRadiusValue = () => (context?.openPercentage() ?? 0) * 14;
@@ -86,11 +87,11 @@ function HomeDrawer(props: RootProps) {
 
 export default {
   Root: Root,
-  Trigger: Dr.Trigger,
-  Label: Dr.Label,
+  Trigger: Dr.Trigger ,
+  Label: Dr.Label as (props:JSX.HTMLAttributes<"h2">) => JSX.Element,
   
   Overlay: Overlay,
-  Content: Content,
-  Description: Dr.Description,
-  Portal: Dr.Portal,
+  Content: Content ,
+  Description: Dr.Description as (props:JSX.HTMLAttributes<"p">) => JSX.Element,
+  Portal: Dr.Portal ,
 };
