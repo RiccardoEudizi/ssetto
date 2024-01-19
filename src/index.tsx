@@ -1,6 +1,6 @@
 import "./styles.css";
 
-//@ts-ignore
+
 import Dr from "corvu/drawer";
 import {
   createEffect,
@@ -13,6 +13,7 @@ function Overlay() {
 
   return (
     <Dr.Overlay
+  
       class="overlay"
       style={{
         "background-color": `rgb(0 0 0 / ${0.5 * context?.openPercentage()})`,
@@ -41,7 +42,7 @@ type RootProps = {
 };
 function Root(props: RootProps) {
   return (
-    <Dr.Root breakPoints={[0.75]}>
+    <Dr.Root breakPoints={[0.75]} >
       <HomeDrawer {...props}>{props.children}</HomeDrawer>
     </Dr.Root>
   );
@@ -60,7 +61,7 @@ function HomeDrawer(props: RootProps) {
       props.bgSelector.dataset.drawerOpen = String(
         context?.openPercentage() > 0
       );
-      props.bgSelector.dataset.drawerTransitioning = context?.isTransitioning();
+      props.bgSelector.dataset.drawerTransitioning =String( context?.isTransitioning());
 
       props.bgSelector.style.setProperty("--scale-amount", `${scaleValue()}`);
       props.bgSelector.style.setProperty(
@@ -86,7 +87,7 @@ export default {
   Root: Root,
   Trigger: Dr.Trigger,
   Label: Dr.Label,
-  Title: Dr.Title,
+  
   Overlay: Overlay,
   Content: Content,
   Description: Dr.Description,

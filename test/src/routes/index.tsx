@@ -9,7 +9,7 @@ export default function Home() {
           Open Drawer
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Overlay backgroundColor="" />
+          <Drawer.Overlay  />
           <Drawer.Content class="max-h-[600px] bg-stone-50" hiddenFooter={false}>
             <div class="h-1 w-10 self-center rounded-full bg-stone-300" />
             <Drawer.Label class="mt-2 text-center text-xl font-bold">
