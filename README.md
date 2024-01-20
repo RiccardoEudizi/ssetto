@@ -11,7 +11,7 @@ npm install ssetto
 Use the drawer in your app.
 
 ```jsx
-import { Drawer } from 'ssetto';
+import  Drawer  from 'ssetto';
 
 function MyComponent() {
   return (
