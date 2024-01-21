@@ -49,7 +49,7 @@ function Root(props: RootWProps) {
       open={props.open}
       onOpenChange={props.onOpenChange}
       breakPoints={[0.75]}
-      snapPoints={props.snapPoints ?? []}
+      snapPoints={props.snapPoints ?? undefined}
       defaultSnapPoint={props.defaultSnapPoint ?? 1}
     >
       <HomeDrawer {...props}>{props.children}</HomeDrawer>
