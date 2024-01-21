@@ -2,7 +2,7 @@ MIT License
 
 Copyright (c) 2023 Riccardo Eudizi
 
-All part of this project are inspired by Emil Kowalski's sonner: https://github.com/emilkowalski/sonner
+This project is inspired by Emil Kowalski's vaul: https://github.com/emilkowalski/vaul
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
