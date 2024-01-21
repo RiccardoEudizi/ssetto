@@ -48,7 +48,7 @@ The rest of components are exported from Corvu's ones
 [Docs](https://corvu.dev/docs/primitives/drawer).
 ### Root
 
-`bgSelector`: background element to apply the animation. type HTMLElement.   
+`bgSelector`: background element to apply the animation. type HTMLElement.    
 
 
 ### Trigger
