@@ -25,10 +25,7 @@
   },
   "keywords": [
     "solidjs",
-    "notifications",
-    "toast",
-    "snackbar",
-    "message"
+    "drawer"
   ],
   "author": "Riccardo Eudizi <rik.eudizi@gmail.com>",
   "license": "MIT",
