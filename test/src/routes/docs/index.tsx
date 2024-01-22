@@ -31,7 +31,7 @@ export default function Docs() {
           <h2 class="font-semibold text-2xl leading-relaxed  ">Usage</h2>
 
           <div class="font-mono font-medium text-black rounded-lg p-4 px-6 mt-4  bg-zinc-50 drop-shadow-sm border border-stone-400 border-opacity-60">
-            <pre class=" text-pretty">{`import { Drawer } from 'ssetto';
+            <pre class=" text-pretty">{`import Drawer from 'ssetto';
 
 function MyComponent() {
   return (
