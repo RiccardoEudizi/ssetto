@@ -1,10 +1,16 @@
 
 import "./styles.css";
 import type Tr from  '../node_modules/corvu/dist/Trigger-9BTijD2Z'
-import Dr, { OverlayProps } from "corvu/drawer";
-import { createEffect, JSXElement, on } from "solid-js";
+import Dr from "corvu/drawer";
+import { createEffect, JSX, JSXElement, on } from "solid-js";
 
-function Overlay(props: OverlayProps) {
+type BaseProps = {
+  as?:string,
+  class?:string
+  children: JSXElement;
+}
+
+function Overlay(props: Omit<BaseProps, "children">) {
   const context = Dr.useContext();
 
   return (
@@ -22,8 +28,8 @@ type ContentWProps = {
   children: JSXElement;
 
   class?: string;
-};
-function Content(props: ContentWProps) {
+} ;
+function Content(props: ContentWProps ) {
   return (
     <Dr.Content {...props} class={"peer content " + props.class!}>
       {props.children}
@@ -94,11 +100,11 @@ function HomeDrawer(props: RootWProps) {
 export default {
   Root: Root,
   
-  Trigger: Dr.Trigger ,
-  Label: Dr.Label ,
+  Trigger: Dr.Trigger as (props: BaseProps ) => JSX.Element,
+  Label: Dr.Label as (props: BaseProps) => JSX.Element  ,
 
   Overlay: Overlay,
   Content: Content,
-  Description: Dr.Description ,
-  Portal: Dr.Portal,
-} 
+  Description: Dr.Description as (props: BaseProps) => JSX.Element ,
+  Portal: Dr.Portal ,
+} as const
