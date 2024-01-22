@@ -1,8 +1,8 @@
-import { createControllableSignal } from "corvu";
-import "./styles.css";
 
+import "./styles.css";
+import type Tr from  '../node_modules/corvu/dist/Trigger-9BTijD2Z'
 import Dr, { OverlayProps } from "corvu/drawer";
-import { createEffect, JSX, JSXElement } from "solid-js";
+import { createEffect, JSXElement, on } from "solid-js";
 
 function Overlay(props: OverlayProps) {
   const context = Dr.useContext();
@@ -42,19 +42,20 @@ type RootWProps = {
   onOpenChange?: (open: boolean) => void;
 };
 function Root(props: RootWProps) {
-  
-    
-    return <Dr.Root
-      {...props}
+ 
+
+  return (
+    <Dr.Root
       open={props.open}
       onOpenChange={props.onOpenChange}
       breakPoints={[0.75]}
-      snapPoints={props.snapPoints ?? undefined}
+    
+      snapPoints={props.snapPoints ?? [0, 1]}
       defaultSnapPoint={props.defaultSnapPoint ?? 1}
     >
       <HomeDrawer {...props}>{props.children}</HomeDrawer>
     </Dr.Root>
- 
+  );
 }
 
 function HomeDrawer(props: RootWProps) {
@@ -92,13 +93,12 @@ function HomeDrawer(props: RootWProps) {
 
 export default {
   Root: Root,
-  Trigger: Dr.Trigger,
-  Label: Dr.Label as (props: JSX.HTMLAttributes<"h2">) => JSX.Element,
+  
+  Trigger: Dr.Trigger ,
+  Label: Dr.Label ,
 
   Overlay: Overlay,
   Content: Content,
-  Description: Dr.Description as (
-    props: JSX.HTMLAttributes<"p">
-  ) => JSX.Element,
+  Description: Dr.Description ,
   Portal: Dr.Portal,
-};
+} 
