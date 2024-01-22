@@ -41,7 +41,7 @@ function MyComponent() {
 
 ## API Reference
 
-The Root, Overlay and the Content components are wrappers around Corvu's ones.
+The CARoot, Overlay and the Content components are wrappers around Corvu's ones.
 
 The rest of components are exported from Corvu's ones
 
