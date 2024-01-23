@@ -79,6 +79,7 @@ function HomeDrawer(props: RootWProps) {
     );
 
     props.bgSelector.style.setProperty("--scale-amount", `${scaleValue()}`);
+    props.bgSelector.style.setProperty("--open-percentage", `${context?.openPercentage()}`);
     props.bgSelector.style.setProperty(
       "--radius-amount",
       `${borderRadiusValue()}px`
