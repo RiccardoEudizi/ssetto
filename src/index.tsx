@@ -1,14 +1,13 @@
-
 import "./styles.css";
-import type Tr from  '../node_modules/corvu/dist/Trigger-9BTijD2Z'
+import type Tr from "../node_modules/corvu/dist/Trigger-9BTijD2Z";
 import Dr from "corvu/drawer";
 import { createEffect, JSX, JSXElement, on } from "solid-js";
 
 type BaseProps = {
-  as?:string,
-  class?:string
+  as?: string;
+  class?: string;
   children: JSXElement;
-}
+};
 
 function Overlay(props: Omit<BaseProps, "children">) {
   const context = Dr.useContext();
@@ -28,8 +27,8 @@ type ContentWProps = {
   children: JSXElement;
 
   class?: string;
-} ;
-function Content(props: ContentWProps ) {
+};
+function Content(props: ContentWProps) {
   return (
     <Dr.Content {...props} class={"peer content " + props.class!}>
       {props.children}
@@ -44,18 +43,16 @@ type RootWProps = {
   snapPoints?: number[];
   defaultSnapPoint?: number;
   open?: boolean;
-
+  side?: "top" | "bottom" | "right" | "left";
   onOpenChange?: (open: boolean) => void;
 };
 function Root(props: RootWProps) {
- 
-
   return (
     <Dr.Root
+    side={props.side ?? "bottom"}
       open={props.open}
       onOpenChange={props.onOpenChange}
       breakPoints={[0.75]}
-    
       snapPoints={props.snapPoints ?? [0, 1]}
       defaultSnapPoint={props.defaultSnapPoint ?? 1}
     >
@@ -99,12 +96,12 @@ function HomeDrawer(props: RootWProps) {
 
 export default {
   Root: Root,
-  
-  Trigger: Dr.Trigger as (props: BaseProps ) => JSX.Element,
-  Label: Dr.Label as (props: BaseProps) => JSX.Element  ,
+
+  Trigger: Dr.Trigger as (props: BaseProps) => JSX.Element,
+  Label: Dr.Label as (props: BaseProps) => JSX.Element,
 
   Overlay: Overlay,
   Content: Content,
-  Description: Dr.Description as (props: BaseProps) => JSX.Element ,
-  Portal: Dr.Portal ,
-} as const
+  Description: Dr.Description as (props: BaseProps) => JSX.Element,
+  Portal: Dr.Portal,
+} as const;
