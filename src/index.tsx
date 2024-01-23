@@ -7,10 +7,11 @@ type BaseProps = {
   as?: string;
   class?: string;
   children: JSXElement;
+  contextId?:string
 };
 
 function Overlay(props: Omit<BaseProps, "children">) {
-  const context = Dr.useContext();
+  const context = Dr.useContext(props.contextId );
 
   return (
     <Dr.Overlay
@@ -25,12 +26,12 @@ function Overlay(props: Omit<BaseProps, "children">) {
 }
 type ContentWProps = {
   children: JSXElement;
-
+  contextId?:string
   class?: string;
 };
 function Content(props: ContentWProps) {
   return (
-    <Dr.Content {...props} class={"peer content " + props.class!}>
+    <Dr.Content {...props} contextId={props.contextId} class={"peer content " + props.class!}>
       {props.children}
     </Dr.Content>
   );
@@ -44,12 +45,14 @@ type RootWProps = {
   defaultSnapPoint?: number;
   open?: boolean;
   side?: "top" | "bottom" | "right" | "left";
+  contextId?: string;
   onOpenChange?: (open: boolean) => void;
 };
 function Root(props: RootWProps) {
   return (
     <Dr.Root
-    side={props.side ?? "bottom"}
+      contextId={props.contextId ?? undefined}
+      side={props.side ?? "bottom"}
       open={props.open}
       onOpenChange={props.onOpenChange}
       breakPoints={[0.75]}
@@ -62,7 +65,7 @@ function Root(props: RootWProps) {
 }
 
 function HomeDrawer(props: RootWProps) {
-  const context = Dr.useContext();
+  const context = Dr.useContext(props.contextId );
   const scaleValue = () => 1 - (context?.openPercentage() ?? 0) / 22;
   const borderRadiusValue = () => (context?.openPercentage() ?? 0) * 14;
 
