@@ -1,6 +1,6 @@
 {
   "name": "ssetto",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A drawer component with a sheet animation for Solid.",
   "source": "src/index.tsx",
   "main": "dist/esm/index.js",
@@ -50,12 +50,13 @@
     "rollup": "^3.29.4",
     "rollup-plugin-import-css": "^3.4.0",
     "rollup-preset-solid": "^2.0.1",
-    "solid-js": "latest",
+    "solid-js": "^1.8.11",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "solid-js": "latest"
+    "solid-js": "^1.8.11",
+    "corvu": "^0.3.0"
   },
   "packageManager": "pnpm@8.12.1"
 }
