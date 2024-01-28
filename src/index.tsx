@@ -1,5 +1,5 @@
 import "./styles.css";
-import type Tr from "../node_modules/corvu/dist/Trigger-9BTijD2Z";
+import type Tr from "../node_modules/corvu/dist/Trigger-DBp29VY4";
 import Dr from "corvu/drawer";
 import { createEffect, JSX, JSXElement, on } from "solid-js";
 
