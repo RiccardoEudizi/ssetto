@@ -1,5 +1,4 @@
 import "./styles.css";
-import type Tr from "../node_modules/corvu/dist/Trigger-DBp29VY4";
 import Dr from "corvu/drawer";
 import { createEffect, JSX, JSXElement, on } from "solid-js";
 
@@ -100,11 +99,11 @@ function HomeDrawer(props: RootWProps) {
 export default {
   Root: Root,
 
-  Trigger: Dr.Trigger as (props: BaseProps) => JSX.Element,
-  Label: Dr.Label as (props: BaseProps) => JSX.Element,
+  Trigger: Dr.Trigger ,
+  Label: Dr.Label ,
 
   Overlay: Overlay,
   Content: Content,
-  Description: Dr.Description as (props: BaseProps) => JSX.Element,
+  Description: Dr.Description ,
   Portal: Dr.Portal,
-} as const;
+} 
